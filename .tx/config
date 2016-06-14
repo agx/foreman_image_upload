@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[foreman.foreman_image_upload]
+file_filter = locale/<lang>/foreman_image_upload.edit.po
+source_file = locale/foreman_image_upload.pot
+source_lang = en
+type = PO

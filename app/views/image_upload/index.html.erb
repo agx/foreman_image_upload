@@ -1,0 +1,18 @@
+<% title "Image upload for #{@compute.name}" %>
+
+<% title_actions button_group(link_to_if_authorized _('Upload Imge'), hash_for_new_compute_resource_image_upload_path(params[:compute_resource_id]), :class => 'btn btn-default') %>
+
+<table class="table table-bordered table-striped table-condensed"  data-table='inline'>
+  <thead>
+    <th>Pool</th>
+    <th>Capacity</th>
+  </thead>
+  <tbody>
+    <% @compute.storage_pools.each do |pool| %>
+    <tr>
+      <td><%= pool.name %></td>
+      <td><%= pool.capacity %></td>
+    </tr>
+    <% end -%>
+  </tbody>
+</table>

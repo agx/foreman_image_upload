@@ -1,0 +1,11 @@
+<%= form_for(@image_info,
+    :url => compute_resource_image_upload_index_path(@compute)
+) do |f| %>
+
+<%= f.label :image %>
+<%= f.file_field :image %>
+
+<%= selectable_f f, :pool_name, @compute.storage_pools.map(&:name), { }, :label => _("Upload to storage pool"), :label_size => "col-md-2" %>
+
+<%= submit_or_cancel f, false, :cancel_path => compute_resource_image_upload_index_path(@compute) %>
+<% end %>
